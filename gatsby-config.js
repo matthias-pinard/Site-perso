@@ -60,5 +60,6 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-typescript`,
+    `gatsby-transformer-json`,
   ],
 }
