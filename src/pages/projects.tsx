@@ -6,35 +6,12 @@ import SEO from "../components/seo"
 import ProjectCard from "../components/project-card"
 import { Query } from "../graphqlTypes"
 
+import ProjectView from "../components/pages/projects-views"
+
 export default (query: {data: Query}) => {
   return (
   <Layout>
     <SEO title="Projects" />
-    <div className="items-center flex flex-col lg:flex-row lg:flex-wrap">
-      {query.data.allProjetsJson.edges.map((project, i) => 
-        <ProjectCard
-          name={project.node.name}
-          description={project.node.description}
-          image={project.node.image_path.publicURL}
-          key={i}
-        />
-      )}
-    </div>
+    <ProjectView/>
   </Layout>
 )}
-
-export const query = graphql`
-query {
-  allProjetsJson {
-    edges {
-      node {
-        name
-        description
-        image_path {
-          publicURL
-        }
-      }
-    }
-  }
-}
-`
