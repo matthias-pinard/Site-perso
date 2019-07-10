@@ -1,13 +1,13 @@
 [
     {
         "name": "Xtrem medieval party tournament 2019",
-        "description": "Jeux auant remporter la première place lors d'une game jam organisé par l'Esir et Orange",
+        "description": "Jeux ayant remporter la première place lors d'une Game Jam organisé par l'Esir et Orange",
         "image_path": "../images/xtrem.png"
     },
     {
-        "name": "Xtrem medieval party tournament 2019",
-        "description": "Jeux auant remporter la première place lors d'une game jam organisé par l'Esir et Orange",
-        "image_path": "../images/xtrem.png"
+        "name": "Guizic",
+        "description": "Application android permettant de se guider en musique",
+        "image_path": "../images/guizic.png"
     },
     {
         "name": "Xtrem medieval party tournament 2019",
