@@ -27,6 +27,7 @@ export default () => (
             <input
               type="mail"
               id="mail"
+              name="mail"
               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-4 w-full"
             />
           </div>
@@ -42,6 +43,7 @@ export default () => (
             <input
               type="text"
               id="objet"
+              name="objet"
               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-4 w-full"
             />
           </div>
@@ -54,7 +56,10 @@ export default () => (
             </label>
           </div>
           <div className="md:w-2/3">
-            <textarea className="bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-3 w-full" />
+            <textarea
+              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-3 w-full"
+              name="message"
+            />
           </div>
         </div>
 
