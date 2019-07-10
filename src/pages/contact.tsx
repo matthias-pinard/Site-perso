@@ -8,7 +8,15 @@ export default () => (
   <Layout>
     <SEO title="Contact" />
     <div className="flex justify-center pt-6">
-      <form name="contact" className="w-full max-w-sm" netlify>
+      <form
+        name="contact"
+        className="w-full max-w-sm"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="contact" />
         <div className="md:flex md:items-center  mb-6">
           <div className="md:w-1/3">
             <label htmlFor="mail" className="text-gray-500 font-bold">
@@ -56,7 +64,9 @@ export default () => (
             <button
               className="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
               type="button"
-            >Envoyer</button>
+            >
+              Envoyer
+            </button>
           </div>
         </div>
       </form>
