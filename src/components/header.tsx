@@ -32,7 +32,7 @@ const Header = ({ siteTitle, navigation }) => {
       </div>
 
       <div
-        className={`w-full flex-grow lg:flex lg:items-center lg:w-auto block ${visibility &&
+        className={`w-full flex-grow lg:flex lg:items-center lg:w-auto block ${!visibility &&
           "hidden"}`}
       >
         <div className="text-sm lg:flex-grow">
