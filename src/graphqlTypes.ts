@@ -387,8 +387,8 @@ export type File = Node & {
   /** Copy file to static directory and return public url to it */
   publicURL?: Maybe<Scalars["String"]>
   childImageSharp?: Maybe<ImageSharp>
+  childrenProjetsJson?: Maybe<Array<Maybe<ProjetsJson>>>
   childMarkdownRemark?: Maybe<MarkdownRemark>
-  childProjetsJson?: Maybe<ProjetsJson>
 }
 
 export type FileModifiedTimeArgs = {
@@ -1491,6 +1491,9 @@ export type ProjetsJson = Node & {
   name?: Maybe<Scalars["String"]>
   description?: Maybe<Scalars["String"]>
   image_path?: Maybe<File>
+  video?: Maybe<Scalars["String"]>
+  website?: Maybe<Scalars["String"]>
+  github?: Maybe<Scalars["String"]>
 }
 
 export type ProjetsJsonConnection = {
@@ -1681,6 +1684,9 @@ export enum ProjetsJsonFieldsEnum {
   ImagePathCtime = "image_path___ctime",
   ImagePathBirthtime = "image_path___birthtime",
   ImagePathPublicUrl = "image_path___publicURL",
+  Video = "video",
+  Website = "website",
+  Github = "github",
 }
 
 export type ProjetsJsonFilterInput = {
@@ -1691,6 +1697,9 @@ export type ProjetsJsonFilterInput = {
   name?: Maybe<StringQueryOperatorInput>
   description?: Maybe<StringQueryOperatorInput>
   image_path?: Maybe<FileFilterInput>
+  video?: Maybe<StringQueryOperatorInput>
+  website?: Maybe<StringQueryOperatorInput>
+  github?: Maybe<StringQueryOperatorInput>
 }
 
 export type ProjetsJsonGroupConnection = {
@@ -1940,6 +1949,9 @@ export type QueryProjetsJsonArgs = {
   name?: Maybe<StringQueryOperatorInput>
   description?: Maybe<StringQueryOperatorInput>
   image_path?: Maybe<FileFilterInput>
+  video?: Maybe<StringQueryOperatorInput>
+  website?: Maybe<StringQueryOperatorInput>
+  github?: Maybe<StringQueryOperatorInput>
 }
 
 export type QueryAllProjetsJsonArgs = {
@@ -2750,6 +2762,27 @@ export type SiteMetatdataQueryQuery = { __typename?: "Query" } & {
 export type Unnamed_2_QueryVariables = {}
 
 export type Unnamed_2_Query = { __typename?: "Query" } & {
+  allProjetsJson: Maybe<
+    { __typename?: "ProjetsJsonConnection" } & {
+      edges: Array<
+        { __typename?: "ProjetsJsonEdge" } & {
+          node: { __typename?: "ProjetsJson" } & Pick<
+            ProjetsJson,
+            "name" | "description" | "video" | "website" | "github"
+          > & {
+              image_path: Maybe<
+                { __typename?: "File" } & Pick<File, "publicURL">
+              >
+            }
+        }
+      >
+    }
+  >
+}
+
+export type Unnamed_3_QueryVariables = {}
+
+export type Unnamed_3_Query = { __typename?: "Query" } & {
   site: Maybe<
     { __typename?: "Site" } & {
       siteMetadata: Maybe<
@@ -2762,22 +2795,13 @@ export type Unnamed_2_Query = { __typename?: "Query" } & {
   >
 }
 
-export type Unnamed_3_QueryVariables = {}
+export type Unnamed_4_QueryVariables = {}
 
-export type Unnamed_3_Query = { __typename?: "Query" } & {
-  allProjetsJson: Maybe<
-    { __typename?: "ProjetsJsonConnection" } & {
-      edges: Array<
-        { __typename?: "ProjetsJsonEdge" } & {
-          node: { __typename?: "ProjetsJson" } & Pick<
-            ProjetsJson,
-            "name" | "description"
-          > & {
-              image_path: Maybe<
-                { __typename?: "File" } & Pick<File, "publicURL">
-              >
-            }
-        }
+export type Unnamed_4_Query = { __typename?: "Query" } & {
+  file: Maybe<
+    { __typename?: "File" } & {
+      childMarkdownRemark: Maybe<
+        { __typename?: "MarkdownRemark" } & Pick<MarkdownRemark, "html">
       >
     }
   >

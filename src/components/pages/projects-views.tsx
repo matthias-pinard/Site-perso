@@ -12,6 +12,9 @@ export default () => {
             node {
               name
               description
+              video
+              website
+              github
               image_path {
                 publicURL
               }
@@ -28,6 +31,9 @@ export default () => {
           name={project.node.name}
           description={project.node.description}
           image={project.node.image_path.publicURL}
+          video={project.node.video}
+          website={project.node.website}
+          github={project.node.github}
           key={i}
         />
       ))}
