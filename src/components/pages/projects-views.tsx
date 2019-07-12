@@ -30,7 +30,7 @@ export default () => {
         <ProjectCard
           name={project.node.name}
           description={project.node.description}
-          image={project.node.image_path.publicURL}
+          image={project.node.image_path? project.node.image_path.publicURL : null}
           video={project.node.video}
           website={project.node.website}
           github={project.node.github}

@@ -18,7 +18,7 @@ const ProjectCard = (projet: IProject) => {
           style={{ backgroundImage: `url(${background})` }}
         ></div>
       )}
-      <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+      <div className={`border-r border-b border-l ${!projet.image && "border-t lg:border-l rounded"} border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal w-full`}>
         <div className="text-gray-600 font-bold text-xl mb-2">
           {projet.name}
         </div>

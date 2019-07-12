@@ -29,5 +29,10 @@
         "name": "Xtrem medieval party tournament 2019",
         "description": "Jeux ayant remporté la première place lors d'une game jam organisé par l'Esir et Orange",
         "image_path": "../images/xtrem.png"
+    },
+    {
+        "name": "Test no image",
+        "description": "Une simple carte sans images.",
+        "video": "https://www.youtube.com/watch?v=4SZ3rMMYBLY"
     }
 ]
