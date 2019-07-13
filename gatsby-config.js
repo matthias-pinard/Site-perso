@@ -6,17 +6,17 @@ module.exports = {
     navigation: [
       {
         name: "À propos",
-        link: "/about"
+        link: "/about",
       },
       {
         name: "Projets",
-        link: "/projects"
+        link: "/projects",
       },
       {
         name: "Contact",
-        link: "/contact"
-      }
-    ]
+        link: "/contact",
+      },
+    ],
   },
 
   plugins: [
@@ -48,8 +48,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require("tailwindcss"), require("autoprefixer")]
-      }
+        postCssPlugins: [require("tailwindcss"), require("autoprefixer")],
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -61,5 +61,12 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-typescript`,
     `gatsby-transformer-json`,
+    {
+      resolve: "gatsby-plugin-i18n",
+      options: {
+        langKeyDefault: "fr",
+        useLangKeyLayout: false,
+      },
+    },
   ],
 }
