@@ -9,7 +9,7 @@ export default () => (
   <Layout>
     <SEO title="Contact" />
     <div>
-        Test en
+        Test
     </div>
   </Layout>
 )
