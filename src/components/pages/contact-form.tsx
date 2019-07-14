@@ -54,6 +54,7 @@ export default () => (
           <textarea
             className="bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-3 w-full"
             name="message"
+            rows={7}
           />
         </div>
       </div>
