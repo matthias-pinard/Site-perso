@@ -2450,7 +2450,6 @@ export enum SitePageFieldsEnum {
   IsCreatedByStatefulCreatePages = "isCreatedByStatefulCreatePages",
   ContextSlug = "context___slug",
   ContextLangKey = "context___langKey",
-  PluginCreatorId = "pluginCreator___id",
   PluginCreatorParentId = "pluginCreator___parent___id",
   PluginCreatorParentParentId = "pluginCreator___parent___parent___id",
   PluginCreatorParentParentChildren = "pluginCreator___parent___parent___children",
