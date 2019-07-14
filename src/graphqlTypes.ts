@@ -387,8 +387,9 @@ export type File = Node & {
   /** Copy file to static directory and return public url to it */
   publicURL?: Maybe<Scalars["String"]>
   childImageSharp?: Maybe<ImageSharp>
-  childrenProjetsJson?: Maybe<Array<Maybe<ProjetsJson>>>
   childMarkdownRemark?: Maybe<MarkdownRemark>
+  childrenProjetsJson?: Maybe<Array<Maybe<ProjetsJson>>>
+  childrenFrJson?: Maybe<Array<Maybe<FrJson>>>
 }
 
 export type FileModifiedTimeArgs = {
@@ -662,6 +663,158 @@ export type FloatQueryOperatorInput = {
   lte?: Maybe<Scalars["Float"]>
   in?: Maybe<Array<Maybe<Scalars["Float"]>>>
   nin?: Maybe<Array<Maybe<Scalars["Float"]>>>
+}
+
+export type FrJson = Node & {
+  __typename?: "FrJson"
+  id: Scalars["ID"]
+  parent?: Maybe<Node>
+  children: Array<Node>
+  internal: Internal
+  name?: Maybe<Scalars["String"]>
+  link?: Maybe<Scalars["String"]>
+}
+
+export type FrJsonConnection = {
+  __typename?: "FrJsonConnection"
+  totalCount: Scalars["Int"]
+  edges: Array<FrJsonEdge>
+  nodes: Array<FrJson>
+  pageInfo: PageInfo
+  distinct: Array<Scalars["String"]>
+  group: Array<FrJsonGroupConnection>
+}
+
+export type FrJsonConnectionDistinctArgs = {
+  field: FrJsonFieldsEnum
+}
+
+export type FrJsonConnectionGroupArgs = {
+  skip?: Maybe<Scalars["Int"]>
+  limit?: Maybe<Scalars["Int"]>
+  field: FrJsonFieldsEnum
+}
+
+export type FrJsonEdge = {
+  __typename?: "FrJsonEdge"
+  next?: Maybe<FrJson>
+  node: FrJson
+  previous?: Maybe<FrJson>
+}
+
+export enum FrJsonFieldsEnum {
+  Id = "id",
+  ParentId = "parent___id",
+  ParentParentId = "parent___parent___id",
+  ParentParentParentId = "parent___parent___parent___id",
+  ParentParentParentChildren = "parent___parent___parent___children",
+  ParentParentChildren = "parent___parent___children",
+  ParentParentChildrenId = "parent___parent___children___id",
+  ParentParentChildrenChildren = "parent___parent___children___children",
+  ParentParentInternalContent = "parent___parent___internal___content",
+  ParentParentInternalContentDigest = "parent___parent___internal___contentDigest",
+  ParentParentInternalDescription = "parent___parent___internal___description",
+  ParentParentInternalFieldOwners = "parent___parent___internal___fieldOwners",
+  ParentParentInternalIgnoreType = "parent___parent___internal___ignoreType",
+  ParentParentInternalMediaType = "parent___parent___internal___mediaType",
+  ParentParentInternalOwner = "parent___parent___internal___owner",
+  ParentParentInternalType = "parent___parent___internal___type",
+  ParentChildren = "parent___children",
+  ParentChildrenId = "parent___children___id",
+  ParentChildrenParentId = "parent___children___parent___id",
+  ParentChildrenParentChildren = "parent___children___parent___children",
+  ParentChildrenChildren = "parent___children___children",
+  ParentChildrenChildrenId = "parent___children___children___id",
+  ParentChildrenChildrenChildren = "parent___children___children___children",
+  ParentChildrenInternalContent = "parent___children___internal___content",
+  ParentChildrenInternalContentDigest = "parent___children___internal___contentDigest",
+  ParentChildrenInternalDescription = "parent___children___internal___description",
+  ParentChildrenInternalFieldOwners = "parent___children___internal___fieldOwners",
+  ParentChildrenInternalIgnoreType = "parent___children___internal___ignoreType",
+  ParentChildrenInternalMediaType = "parent___children___internal___mediaType",
+  ParentChildrenInternalOwner = "parent___children___internal___owner",
+  ParentChildrenInternalType = "parent___children___internal___type",
+  ParentInternalContent = "parent___internal___content",
+  ParentInternalContentDigest = "parent___internal___contentDigest",
+  ParentInternalDescription = "parent___internal___description",
+  ParentInternalFieldOwners = "parent___internal___fieldOwners",
+  ParentInternalIgnoreType = "parent___internal___ignoreType",
+  ParentInternalMediaType = "parent___internal___mediaType",
+  ParentInternalOwner = "parent___internal___owner",
+  ParentInternalType = "parent___internal___type",
+  Children = "children",
+  ChildrenId = "children___id",
+  ChildrenParentId = "children___parent___id",
+  ChildrenParentParentId = "children___parent___parent___id",
+  ChildrenParentParentChildren = "children___parent___parent___children",
+  ChildrenParentChildren = "children___parent___children",
+  ChildrenParentChildrenId = "children___parent___children___id",
+  ChildrenParentChildrenChildren = "children___parent___children___children",
+  ChildrenParentInternalContent = "children___parent___internal___content",
+  ChildrenParentInternalContentDigest = "children___parent___internal___contentDigest",
+  ChildrenParentInternalDescription = "children___parent___internal___description",
+  ChildrenParentInternalFieldOwners = "children___parent___internal___fieldOwners",
+  ChildrenParentInternalIgnoreType = "children___parent___internal___ignoreType",
+  ChildrenParentInternalMediaType = "children___parent___internal___mediaType",
+  ChildrenParentInternalOwner = "children___parent___internal___owner",
+  ChildrenParentInternalType = "children___parent___internal___type",
+  ChildrenChildren = "children___children",
+  ChildrenChildrenId = "children___children___id",
+  ChildrenChildrenParentId = "children___children___parent___id",
+  ChildrenChildrenParentChildren = "children___children___parent___children",
+  ChildrenChildrenChildren = "children___children___children",
+  ChildrenChildrenChildrenId = "children___children___children___id",
+  ChildrenChildrenChildrenChildren = "children___children___children___children",
+  ChildrenChildrenInternalContent = "children___children___internal___content",
+  ChildrenChildrenInternalContentDigest = "children___children___internal___contentDigest",
+  ChildrenChildrenInternalDescription = "children___children___internal___description",
+  ChildrenChildrenInternalFieldOwners = "children___children___internal___fieldOwners",
+  ChildrenChildrenInternalIgnoreType = "children___children___internal___ignoreType",
+  ChildrenChildrenInternalMediaType = "children___children___internal___mediaType",
+  ChildrenChildrenInternalOwner = "children___children___internal___owner",
+  ChildrenChildrenInternalType = "children___children___internal___type",
+  ChildrenInternalContent = "children___internal___content",
+  ChildrenInternalContentDigest = "children___internal___contentDigest",
+  ChildrenInternalDescription = "children___internal___description",
+  ChildrenInternalFieldOwners = "children___internal___fieldOwners",
+  ChildrenInternalIgnoreType = "children___internal___ignoreType",
+  ChildrenInternalMediaType = "children___internal___mediaType",
+  ChildrenInternalOwner = "children___internal___owner",
+  ChildrenInternalType = "children___internal___type",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalDescription = "internal___description",
+  InternalFieldOwners = "internal___fieldOwners",
+  InternalIgnoreType = "internal___ignoreType",
+  InternalMediaType = "internal___mediaType",
+  InternalOwner = "internal___owner",
+  InternalType = "internal___type",
+  Name = "name",
+  Link = "link",
+}
+
+export type FrJsonFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>
+  parent?: Maybe<NodeFilterInput>
+  children?: Maybe<NodeFilterListInput>
+  internal?: Maybe<InternalFilterInput>
+  name?: Maybe<StringQueryOperatorInput>
+  link?: Maybe<StringQueryOperatorInput>
+}
+
+export type FrJsonGroupConnection = {
+  __typename?: "FrJsonGroupConnection"
+  totalCount: Scalars["Int"]
+  edges: Array<FrJsonEdge>
+  nodes: Array<FrJson>
+  pageInfo: PageInfo
+  field: Scalars["String"]
+  fieldValue?: Maybe<Scalars["String"]>
+}
+
+export type FrJsonSortInput = {
+  fields?: Maybe<Array<Maybe<FrJsonFieldsEnum>>>
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>
 }
 
 export enum HeadingLevels {
@@ -1489,7 +1642,7 @@ export type ProjetsJson = Node & {
   children: Array<Node>
   internal: Internal
   name?: Maybe<Scalars["String"]>
-  description?: Maybe<Scalars["String"]>
+  descriptionId?: Maybe<Scalars["String"]>
   image_path?: Maybe<File>
   video?: Maybe<Scalars["String"]>
   website?: Maybe<Scalars["String"]>
@@ -1611,7 +1764,7 @@ export enum ProjetsJsonFieldsEnum {
   InternalOwner = "internal___owner",
   InternalType = "internal___type",
   Name = "name",
-  Description = "description",
+  DescriptionId = "descriptionId",
   ImagePathId = "image_path___id",
   ImagePathParentId = "image_path___parent___id",
   ImagePathParentParentId = "image_path___parent___parent___id",
@@ -1695,7 +1848,7 @@ export type ProjetsJsonFilterInput = {
   children?: Maybe<NodeFilterListInput>
   internal?: Maybe<InternalFilterInput>
   name?: Maybe<StringQueryOperatorInput>
-  description?: Maybe<StringQueryOperatorInput>
+  descriptionId?: Maybe<StringQueryOperatorInput>
   image_path?: Maybe<FileFilterInput>
   video?: Maybe<StringQueryOperatorInput>
   website?: Maybe<StringQueryOperatorInput>
@@ -1731,6 +1884,8 @@ export type Query = {
   allDirectory?: Maybe<DirectoryConnection>
   imageSharp?: Maybe<ImageSharp>
   allImageSharp?: Maybe<ImageSharpConnection>
+  frJson?: Maybe<FrJson>
+  allFrJson?: Maybe<FrJsonConnection>
   markdownRemark?: Maybe<MarkdownRemark>
   allMarkdownRemark?: Maybe<MarkdownRemarkConnection>
   projetsJson?: Maybe<ProjetsJson>
@@ -1795,6 +1950,7 @@ export type QuerySitePageArgs = {
   component?: Maybe<StringQueryOperatorInput>
   componentChunkName?: Maybe<StringQueryOperatorInput>
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>
+  context?: Maybe<SitePageContextFilterInput>
   pluginCreator?: Maybe<SitePluginFilterInput>
   pluginCreatorId?: Maybe<StringQueryOperatorInput>
   componentPath?: Maybe<StringQueryOperatorInput>
@@ -1916,6 +2072,22 @@ export type QueryAllImageSharpArgs = {
   limit?: Maybe<Scalars["Int"]>
 }
 
+export type QueryFrJsonArgs = {
+  id?: Maybe<StringQueryOperatorInput>
+  parent?: Maybe<NodeFilterInput>
+  children?: Maybe<NodeFilterListInput>
+  internal?: Maybe<InternalFilterInput>
+  name?: Maybe<StringQueryOperatorInput>
+  link?: Maybe<StringQueryOperatorInput>
+}
+
+export type QueryAllFrJsonArgs = {
+  filter?: Maybe<FrJsonFilterInput>
+  sort?: Maybe<FrJsonSortInput>
+  skip?: Maybe<Scalars["Int"]>
+  limit?: Maybe<Scalars["Int"]>
+}
+
 export type QueryMarkdownRemarkArgs = {
   id?: Maybe<StringQueryOperatorInput>
   parent?: Maybe<NodeFilterInput>
@@ -1947,7 +2119,7 @@ export type QueryProjetsJsonArgs = {
   children?: Maybe<NodeFilterListInput>
   internal?: Maybe<InternalFilterInput>
   name?: Maybe<StringQueryOperatorInput>
-  description?: Maybe<StringQueryOperatorInput>
+  descriptionId?: Maybe<StringQueryOperatorInput>
   image_path?: Maybe<FileFilterInput>
   video?: Maybe<StringQueryOperatorInput>
   website?: Maybe<StringQueryOperatorInput>
@@ -2099,9 +2271,6 @@ export enum SiteFieldsEnum {
   SiteMetadataTitle = "siteMetadata___title",
   SiteMetadataDescription = "siteMetadata___description",
   SiteMetadataAuthor = "siteMetadata___author",
-  SiteMetadataNavigation = "siteMetadata___navigation",
-  SiteMetadataNavigationName = "siteMetadata___navigation___name",
-  SiteMetadataNavigationLink = "siteMetadata___navigation___link",
   Port = "port",
   Host = "host",
   PathPrefix = "pathPrefix",
@@ -2143,6 +2312,7 @@ export type SitePage = Node & {
   component?: Maybe<Scalars["String"]>
   componentChunkName?: Maybe<Scalars["String"]>
   isCreatedByStatefulCreatePages?: Maybe<Scalars["Boolean"]>
+  context?: Maybe<SitePageContext>
   pluginCreator?: Maybe<SitePlugin>
   pluginCreatorId?: Maybe<Scalars["String"]>
   componentPath?: Maybe<Scalars["String"]>
@@ -2166,6 +2336,17 @@ export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars["Int"]>
   limit?: Maybe<Scalars["Int"]>
   field: SitePageFieldsEnum
+}
+
+export type SitePageContext = {
+  __typename?: "SitePageContext"
+  slug?: Maybe<Scalars["String"]>
+  langKey?: Maybe<Scalars["String"]>
+}
+
+export type SitePageContextFilterInput = {
+  slug?: Maybe<StringQueryOperatorInput>
+  langKey?: Maybe<StringQueryOperatorInput>
 }
 
 export type SitePageEdge = {
@@ -2267,6 +2448,8 @@ export enum SitePageFieldsEnum {
   Component = "component",
   ComponentChunkName = "componentChunkName",
   IsCreatedByStatefulCreatePages = "isCreatedByStatefulCreatePages",
+  ContextSlug = "context___slug",
+  ContextLangKey = "context___langKey",
   PluginCreatorId = "pluginCreator___id",
   PluginCreatorParentId = "pluginCreator___parent___id",
   PluginCreatorParentParentId = "pluginCreator___parent___parent___id",
@@ -2316,6 +2499,8 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsThemeColor = "pluginCreator___pluginOptions___theme_color",
   PluginCreatorPluginOptionsDisplay = "pluginCreator___pluginOptions___display",
   PluginCreatorPluginOptionsIcon = "pluginCreator___pluginOptions___icon",
+  PluginCreatorPluginOptionsLangKeyDefault = "pluginCreator___pluginOptions___langKeyDefault",
+  PluginCreatorPluginOptionsUseLangKeyLayout = "pluginCreator___pluginOptions___useLangKeyLayout",
   PluginCreatorPluginOptionsPathCheck = "pluginCreator___pluginOptions___pathCheck",
   PluginCreatorNodeApIs = "pluginCreator___nodeAPIs",
   PluginCreatorSsrApIs = "pluginCreator___ssrAPIs",
@@ -2349,6 +2534,7 @@ export type SitePageFilterInput = {
   component?: Maybe<StringQueryOperatorInput>
   componentChunkName?: Maybe<StringQueryOperatorInput>
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>
+  context?: Maybe<SitePageContextFilterInput>
   pluginCreator?: Maybe<SitePluginFilterInput>
   pluginCreatorId?: Maybe<StringQueryOperatorInput>
   componentPath?: Maybe<StringQueryOperatorInput>
@@ -2510,6 +2696,8 @@ export enum SitePluginFieldsEnum {
   PluginOptionsThemeColor = "pluginOptions___theme_color",
   PluginOptionsDisplay = "pluginOptions___display",
   PluginOptionsIcon = "pluginOptions___icon",
+  PluginOptionsLangKeyDefault = "pluginOptions___langKeyDefault",
+  PluginOptionsUseLangKeyLayout = "pluginOptions___useLangKeyLayout",
   PluginOptionsPathCheck = "pluginOptions___pathCheck",
   NodeApIs = "nodeAPIs",
   SsrApIs = "ssrAPIs",
@@ -2636,6 +2824,8 @@ export type SitePluginPluginOptions = {
   theme_color?: Maybe<Scalars["String"]>
   display?: Maybe<Scalars["String"]>
   icon?: Maybe<Scalars["String"]>
+  langKeyDefault?: Maybe<Scalars["String"]>
+  useLangKeyLayout?: Maybe<Scalars["Boolean"]>
   pathCheck?: Maybe<Scalars["Boolean"]>
 }
 
@@ -2648,6 +2838,8 @@ export type SitePluginPluginOptionsFilterInput = {
   theme_color?: Maybe<StringQueryOperatorInput>
   display?: Maybe<StringQueryOperatorInput>
   icon?: Maybe<StringQueryOperatorInput>
+  langKeyDefault?: Maybe<StringQueryOperatorInput>
+  useLangKeyLayout?: Maybe<BooleanQueryOperatorInput>
   pathCheck?: Maybe<BooleanQueryOperatorInput>
 }
 
@@ -2661,29 +2853,12 @@ export type SiteSiteMetadata = {
   title?: Maybe<Scalars["String"]>
   description?: Maybe<Scalars["String"]>
   author?: Maybe<Scalars["String"]>
-  navigation?: Maybe<Array<Maybe<SiteSiteMetadataNavigation>>>
 }
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>
   description?: Maybe<StringQueryOperatorInput>
   author?: Maybe<StringQueryOperatorInput>
-  navigation?: Maybe<SiteSiteMetadataNavigationFilterListInput>
-}
-
-export type SiteSiteMetadataNavigation = {
-  __typename?: "SiteSiteMetadataNavigation"
-  name?: Maybe<Scalars["String"]>
-  link?: Maybe<Scalars["String"]>
-}
-
-export type SiteSiteMetadataNavigationFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>
-  link?: Maybe<StringQueryOperatorInput>
-}
-
-export type SiteSiteMetadataNavigationFilterListInput = {
-  elemMatch?: Maybe<SiteSiteMetadataNavigationFilterInput>
 }
 
 export type SiteSortInput = {
@@ -2733,27 +2908,21 @@ export type Unnamed_1_Query = { __typename?: "Query" } & {
   >
 }
 
-export type SiteMetatdataQueryQueryVariables = {}
+export type MyQueryQueryVariables = {}
 
-export type SiteMetatdataQueryQuery = { __typename?: "Query" } & {
-  site: Maybe<
-    { __typename?: "Site" } & {
-      siteMetadata: Maybe<
-        { __typename?: "SiteSiteMetadata" } & Pick<
-          SiteSiteMetadata,
-          "title"
-        > & {
-            navigation: Maybe<
+export type MyQueryQuery = { __typename?: "Query" } & {
+  allFile: Maybe<
+    { __typename?: "FileConnection" } & {
+      edges: Array<
+        { __typename?: "FileEdge" } & {
+          node: { __typename?: "File" } & {
+            childrenFrJson: Maybe<
               Array<
-                Maybe<
-                  { __typename?: "SiteSiteMetadataNavigation" } & Pick<
-                    SiteSiteMetadataNavigation,
-                    "name" | "link"
-                  >
-                >
+                Maybe<{ __typename?: "FrJson" } & Pick<FrJson, "name" | "link">>
               >
             >
           }
+        }
       >
     }
   >
@@ -2768,7 +2937,7 @@ export type Unnamed_2_Query = { __typename?: "Query" } & {
         { __typename?: "ProjetsJsonEdge" } & {
           node: { __typename?: "ProjetsJson" } & Pick<
             ProjetsJson,
-            "name" | "description" | "video" | "website" | "github"
+            "name" | "descriptionId" | "video" | "website" | "github"
           > & {
               image_path: Maybe<
                 { __typename?: "File" } & Pick<File, "publicURL">

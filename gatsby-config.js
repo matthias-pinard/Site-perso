@@ -3,20 +3,6 @@ module.exports = {
     title: `Matthias Pinard`,
     description: `A site about a robot.`,
     author: `@gatsbyjs`,
-    navigation: [
-      {
-        name: "À propos",
-        link: "/about",
-      },
-      {
-        name: "Projets",
-        link: "/projects",
-      },
-      {
-        name: "Contact",
-        link: "/contact",
-      },
-    ],
   },
 
   plugins: [
@@ -53,9 +39,17 @@ module.exports = {
     },
     {
       resolve: `gatsby-source-filesystem`,
+      name: `content`,
       options: {
         name: `content`,
         path: `${__dirname}/src/content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `naviguation`,
+        path: `${__dirname}/src/intl/naviguation`,
       },
     },
     `gatsby-transformer-remark`,

@@ -6,6 +6,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faGlobe } from "@fortawesome/free-solid-svg-icons"
 import "../css/global.css"
 import { IProject } from "../interface/IProject"
+import {FormattedMessage} from "react-intl"
 
 const ProjectCard = (projet: IProject) => {
   const background = projet.image
@@ -23,7 +24,7 @@ const ProjectCard = (projet: IProject) => {
           {projet.name}
         </div>
         <p className="text-gray-700 text-sm mb-4 text-justify">
-          {projet.description}
+          <FormattedMessage id={projet.descriptionId}/>
         </p>
         <div className="flex justify-around max-w-full">
           {projet.video && (

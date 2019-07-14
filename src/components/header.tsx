@@ -2,17 +2,18 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 import "../css/global.css"
+import {FormattedMessage, useIntl} from "react-intl"
 
-const Header = ({ siteTitle, navigation }) => {
+const Header = ({ navigation }) => {
   const [visibility, setVisibility] = useState(false)
   const toogleVisibility = () => {
     setVisibility(!visibility)
-    console.log(visibility)
-  }
+  };
+  const intl = useIntl();
   return (
     <nav className="flex items-center justify-between flex-wrap bg-blue-500 p-6">
       <div className=" flex items-center flex-shrink-0 text-white mr-6">
-        <Link to="/">{siteTitle}</Link>
+        <Link to={`/${intl.locale}`}><FormattedMessage id="siteTitle"/></Link>
       </div>
 
       <div className="block lg:hidden">
@@ -49,31 +50,6 @@ const Header = ({ siteTitle, navigation }) => {
       </div>
     </nav>
   )
-}
-
-// const Header = ({ siteTitle, navigation }) => (
-//   <header className="bg-blue-500 flex">
-//     <ul className="flex text-white m-4">
-//       <li className="mr-6">
-//         <Link to="/">{siteTitle}</Link>
-//       </li>
-//       {navigation.map(elem => (
-//         <li className="mr-6">
-//           <Link to={elem.link}>{elem.name}</Link>
-//         </li>
-//       ))}
-//     </ul>
-//   </header>
-// )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-  navigation: PropTypes.array,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-  navigation: [],
 }
 
 export default Header

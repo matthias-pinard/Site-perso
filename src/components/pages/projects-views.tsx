@@ -11,7 +11,7 @@ export default () => {
           edges {
             node {
               name
-              description
+              descriptionId
               video
               website
               github
@@ -29,7 +29,7 @@ export default () => {
       {data.allProjetsJson.edges.map((project, i) => (
         <ProjectCard
           name={project.node.name}
-          description={project.node.description}
+          descriptionId={project.node.descriptionId}
           image={project.node.image_path? project.node.image_path.publicURL : null}
           video={project.node.video}
           website={project.node.website}

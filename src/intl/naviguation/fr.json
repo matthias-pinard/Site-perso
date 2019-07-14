@@ -1,0 +1,14 @@
+[
+    {
+      "name": "À propos",
+      "link": "/fr/about"
+    },
+    {
+      "name": "Projets",
+      "link": "/fr/projects"
+    },
+    {
+      "name": "Contact",
+      "link": "/fr/contact"
+    }
+  ]

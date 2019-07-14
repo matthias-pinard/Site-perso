@@ -1,4 +1,5 @@
 import React from "react"
+import {FormattedMessage} from "react-intl"
 
 export default () => (
     <div className="flex justify-center pt-6">
@@ -14,7 +15,7 @@ export default () => (
       <div className="md:flex md:items-center  mb-6">
         <div className="md:w-1/4">
           <label htmlFor="mail" className="text-gray-500 font-bold">
-            Mail
+            <FormattedMessage id="labelMail"/>
           </label>
         </div>
         <div className="md:w-3/4">
@@ -30,7 +31,7 @@ export default () => (
       <div className="md:flex md:items-center mb-6">
         <div className="md:w-1/4">
           <label htmlFor="objet" className="text-gray-500 font-bold">
-            Objet
+            <FormattedMessage id="labelObject"/>
           </label>
         </div>
         <div className="md:w-3/4">
@@ -46,7 +47,7 @@ export default () => (
       <div className="md:flex md:items-center mb-2">
         <div className="md:w-1/4">
           <label htmlFor="mail" className="text-gray-500 font-bold">
-            Message
+            <FormattedMessage id="labelMessage"/>
           </label>
         </div>
         <div className="md:w-3/4">
@@ -64,7 +65,7 @@ export default () => (
             className="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
             type="submit"
           >
-            Envoyer
+            <FormattedMessage id="labelSubmit"/>
           </button>
         </div>
       </div>
