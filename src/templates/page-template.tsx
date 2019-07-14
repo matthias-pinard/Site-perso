@@ -9,7 +9,7 @@ export default ({data}) =>  {
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <div className="blog-post-container  mx-auto text-justify font-sans leading-relaxed text-base max-w-2xl">
+      <div className="blog-post-container mx-auto text-justify font-sans leading-relaxed text-base max-w-2xl">
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
           <div
