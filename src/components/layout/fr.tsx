@@ -31,6 +31,6 @@ export default props => {
   })
 
   return (
-    <Layout {...props} locale="fr" title="A traduire" naviguation={naviguation} messages={messages}></Layout>
+    <Layout {...props} locale="fr" title="A traduire" naviguation={naviguation} messages={messages}/>
   )
 }
